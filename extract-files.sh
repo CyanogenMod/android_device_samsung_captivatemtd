@@ -30,7 +30,6 @@ adb pull /system/etc/gps.conf ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull /system/vendor/bin/gpsd ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull /system/vendor/etc/gps.xml ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull /system/vendor/lib/hw/gps.aries.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull /system/lib/libcamera.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 adb pull /radio/modem.bin ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
 
 # aries-common
@@ -68,6 +67,7 @@ adb pull /system/lib/libcaps.so ../../../vendor/$MANUFACTURER/$COMMON/proprietar
 adb pull /system/lib/libPanoraMax1.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 adb pull /system/lib/libPlusMe.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 adb pull /system/lib/libs3cjpeg.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
+adb pull /system/lib/libsamsungcamera.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 adb pull /system/lib/libseccamera.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 adb pull /system/lib/libseccameraadaptor.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
 adb pull /system/lib/libsecjpegencoder.so ../../../vendor/$MANUFACTURER/$COMMON/proprietary
@@ -102,7 +102,6 @@ adb pull /system/firmware/CE147F03.bin ../../../vendor/$MANUFACTURER/$COMMON/pro
 
 # Prebuilt libraries that are needed to build open-source libraries
 PRODUCT_COPY_FILES := \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libril.so:obj/lib/libril.so \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/libsecril-client.so:obj/lib/libsecril-client.so
 
@@ -116,8 +115,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gps.conf:system/etc/gps.conf \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gpsd:system/vendor/bin/gpsd \\
     vendor/__MANUFACTURER__/__DEVICE__/proprietary/gps.xml:system/vendor/etc/gps.xml \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/gps.aries.so:system/vendor/lib/hw/gps.aries.so \\
-    vendor/__MANUFACTURER__/__DEVICE__/proprietary/libcamera.so:system/lib/libcamera.so
+    vendor/__MANUFACTURER__/__DEVICE__/proprietary/gps.aries.so:system/vendor/lib/hw/gps.aries.so
 EOF
 
 
@@ -175,6 +173,7 @@ PRODUCT_COPY_FILES += \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libPanoraMax1.so:system/lib/libPanoraMax1.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libPlusMe.so:system/lib/libPlusMe.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libs3cjpeg.so:system/lib/libs3cjpeg.so \\
+    vendor/__MANUFACTURER__/__COMMON__/proprietary/libsamsungcamera.so:system/lib/libsamsungcamera.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libseccamera.so:system/lib/libseccamera.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libseccameraadaptor.so:system/lib/libseccameraadaptor.so \\
     vendor/__MANUFACTURER__/__COMMON__/proprietary/libsecjpegencoder.so:system/lib/libsecjpegencoder.so \\
